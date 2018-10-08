@@ -1,0 +1,35 @@
+body {
+    background-color: silver;
+}
+
+.container {
+    display: flex;
+    background-color: teal;
+    height: 100vh;
+    /* justify-content: center; */
+    flex-direction: column;
+    margin: 5vh;
+}
+
+.headline {
+   color: silver;
+   justify-content: center;
+}
+
+.playbox {
+    flex-wrap: wrap;
+   
+    background-color: rosybrown;
+   
+    margin: 20vh;
+   
+}
+
+.answerbox {
+    flex-wrap: wrap;
+  
+    background-color: darkseagreen;
+  
+    margin: 20vh;
+    
+}
