@@ -1,4 +1,4 @@
-const {spices, creatures} = require('./data')
+const { spices, creatures } = require('./data')
 const logic = require('./logic')
 const _ = require('lodash')
 
@@ -7,13 +7,14 @@ const _ = require('lodash')
 
 const form = document.querySelector('form')
 
-const shuffledArray = logic.wordPick(creatures)
-const shuffledWord = _.shuffle(shuffledArray[0]).join('')
+const shuffledArray = logic.wordPick(spices)
+let shuffledWord = _.shuffle(shuffledArray[0]).join('')
 let heldLetterId
+let targetLetterId
 
 
-        
-    document.getElementById("answer").focus();
+
+document.getElementById("answer").focus();
 
 
 
@@ -25,6 +26,7 @@ const renderShuffledWord = (word) => {
     for (let i = 0; i < word.length; i++) {
         let gameBoard = `<div class="letterbox" data-id ="${i}" data-letter="${word[i]}" draggable = "true">${word[i]}</div>`
         playArea.innerHTML += gameBoard
+        
     }
     addDropEvents()
 }
@@ -32,7 +34,7 @@ const renderShuffledWord = (word) => {
 const renderScore = () => {
     let displayScore = localStorage.getItem('score')
     const scorebox = document.querySelector('.scorebox')
-    scorebox.innerHTML = `<p class="score">*${displayScore}*</p>`
+    scorebox.innerHTML = `<p class="score">Score: ${displayScore}</p>`
 }
 
 renderScore()
@@ -47,21 +49,25 @@ const addDropEvents = () => {
             e.preventDefault()
         })
         letterbox.addEventListener('drop', (e) => {
-            let targetletterId = event.target.getAttribute('data-id')
+            const targetLetterId = e.target.getAttribute('data-id')
+            
+            console.log('targetletter', targetLetterId)
             const droppingLetter = shuffledWord[heldLetterId]
-
+            console.log(heldLetterId)
+            console.log('dropping letter', droppingLetter)
             const splitShuffledWord = shuffledWord.split('')
+            console.log(splitShuffledWord)
 
-            splitShuffledWord.splice(droppingLetter, 1)
-            splitShuffledWord.splice(targetletterId, 0, droppingLetter)
+            splitShuffledWord.splice(heldLetterId, 1)
+            splitShuffledWord.splice(targetLetterId, 0, droppingLetter)
 
             console.log(splitShuffledWord)
 
-
-            renderShuffledWord(splitShuffledWord.join(''))
+            shuffledWord = splitShuffledWord.join('')
+            renderShuffledWord(shuffledWord)
         })
         letterbox.addEventListener('dragstart', (e) => {
-            heldLetterId = event.target.getAttribute('data-id')
+            heldLetterId = e.target.getAttribute('data-id')
 
         })
     }
@@ -72,7 +78,7 @@ renderShuffledWord(shuffledWord)
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    
+
 
     if (document.getElementById('answer').value === shuffledArray[0]) {
         let score = localStorage.getItem('score')
@@ -84,34 +90,50 @@ form.addEventListener('submit', (e) => {
             let reScore = JSON.stringify(currentScore)
             localStorage.setItem('score', reScore)
         }
-        let feedback = document.querySelector('.feedback') 
+        let feedback = document.querySelector('.feedback')
         feedback.innerHTML = `<p class ='message'>Success!!</p>`
-        
+
         renderScore()
         const replay = () => {
             window.location.reload()
-          }
-          setTimeout(replay, 2000)
-        
+        }
+        setTimeout(replay, 2000)
+
     } else {
         console.log(shuffledArray[0])
-        let feedback = document.querySelector('.feedback') 
+        let feedback = document.querySelector('.feedback')
         feedback.innerHTML = `<p class='message'>Keep Trying</p>`
-       
+
     }
 
 })
 
-const reset = document.querySelector('.reset')
-    reset.addEventListener('click', (e) => {
-        let feedback = document.querySelector('.feedback') 
-        feedback.innerHTML = `<p class='message'>${shuffled[0]}</p>`
-        const newWord = () => {
-            window.location.reload()
-          }
-          setTimeout(newWord, 2000)
+// const theme = document.querySelectorAll('.theme')
+// theme.addEventListener('change', (e) {
+//     if (e.target.value === 'spices') {
 
-    })
+//         shuffledArray = logic.wordPick(spices)
+//         window.location.reload()
+//     }
+//     if (e.target.value === 'creatures') {
+
+//         shuffledArray = logic.wordPick(creatures)
+//         window.location.reload()
+//     }else {
+//         shuffledArray = logic.wordPick(spices)
+//     }
+// })
+
+const reset = document.querySelector('.reset')
+reset.addEventListener('click', (e) => {
+    let feedback = document.querySelector('.feedback')
+    feedback.innerHTML = `<p class='message'>${shuffled[0]}</p>`
+    const newWord = () => {
+        window.location.reload()
+    }
+    setTimeout(newWord, 2000)
+
+})
 
 
 

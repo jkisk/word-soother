@@ -22,11 +22,12 @@
     <main class="container">
             <div class="headline">
                     <p>Word Soother</p>
+                    <div class="scorebox">
+                    </div>
                     
             </div>
            
-            <div class="scorebox">
-            </div>
+            
             
             <div class="playbox" id="playArea">
                 
@@ -37,9 +38,15 @@
             
             <div class="answerbox">
                 <form>
-                    <input type="text" class="answer-input" autocomplete="off" placeholder="answer here" id="answer"/>
+                    <input type="text" class="answer-input" autocomplete="off" placeholder="guess here" id="answer"/>
                     <input type="submit"/>
                     <button type="button" class="reset">New Word</button>
+                    <select class="theme">
+                        <option value="spices">Spices</option>
+                        <option value="creatures">Creatures</option>
+                        <option value="choice-3">choice 3</option>
+                        <option value="choice-4">choice 4</option>
+                      </select>
                 </form>
             
                 
