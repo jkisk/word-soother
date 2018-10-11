@@ -17152,6 +17152,12 @@ const _ = require('lodash')
 
 
 
+const renderScore = () => {
+    let displayScore = localStorage.getItem('score')
+    const scorebox = document.querySelector('.scorebox')
+    scorebox.innerHTML = `<p class="score">Wins: ${displayScore}</p>`
+}
+
 
 
 const wordPick = (array) => {
@@ -17166,10 +17172,11 @@ const wordPick = (array) => {
 
 
 
-module.exports = {wordPick}
+
+module.exports = {wordPick, renderScore}
 },{"lodash":1}],4:[function(require,module,exports){
 const { spices, creatures, countries, colors } = require('./data')
-const logic = require('./logic')
+const {wordPick, renderScore} = require('./logic')
 const _ = require('lodash')
 
 
@@ -17177,29 +17184,31 @@ const _ = require('lodash')
 const themeChooser = document.getElementById('theme')
 let theme = spices
 
-let shuffledArray = logic.wordPick(theme)
+let shuffledArray = wordPick(theme)
 const form = document.querySelector('form')
 
 let shuffledWord = _.shuffle(shuffledArray[0]).join('')
 let heldLetterId
 
+
+
 themeChooser.addEventListener('change', (e) => {
     console.log(e.target.value)
     if (e.target.value === 'spices') {
-        theme = logic.wordPick(spices)
+        theme = wordPick(spices)
 
     }
     if (e.target.value === 'creatures') {
-        theme = logic.wordPick(creatures)
+        theme = wordPick(creatures)
 
     }if (e.target.value === 'countries') {
-        theme = logic.wordPick(countries)
+        theme = wordPick(countries)
 
     }
 if (e.target.value === 'colors') {
-        theme = logic.wordPick(colors)
+        theme = wordPick(colors)
     }
-        shuffledArray = logic.wordPick(theme)
+        shuffledArray = wordPick(theme)
         shuffledWord = _.shuffle(shuffledArray[0]).join('')
         renderShuffledWord(shuffledWord)
        
@@ -17209,7 +17218,6 @@ if (e.target.value === 'colors') {
 
 
 
-document.getElementById("answer").focus();
 
 const renderShuffledWord = (word) => {
 
@@ -17227,11 +17235,7 @@ const renderShuffledWord = (word) => {
         addDropEvents()
 }
 
-const renderScore = () => {
-    let displayScore = localStorage.getItem('score')
-    const scorebox = document.querySelector('.scorebox')
-    scorebox.innerHTML = `<p class="score">Wins: ${displayScore}</p>`
-}
+
 
 renderScore()
 
@@ -17288,7 +17292,7 @@ form.addEventListener('submit', (e) => {
 
         const replay = () => {
             document.querySelector('.feedback').innerHTML = ''
-            shuffledArray = logic.wordPick(theme)
+            shuffledArray = wordPick(theme)
             shuffledWord = _.shuffle(shuffledArray[0]).join('')
             renderShuffledWord(shuffledWord)
             
@@ -17298,6 +17302,7 @@ form.addEventListener('submit', (e) => {
     } else {
         let feedback = document.querySelector('.feedback')
         feedback.innerHTML = `<p class='message'>Keep Trying</p>`
+        document.getElementById('answer').value = ''
 
     }
 
@@ -17311,7 +17316,7 @@ reset.addEventListener('click', (e) => {
     let feedback = document.querySelector('.feedback')
     feedback.innerHTML = `<p class='message'>${shuffledArray[0]}</p>`
     const newWord = () => {
-        shuffledArray = logic.wordPick(theme)
+        shuffledArray = wordPick(theme)
         shuffledWord = _.shuffle(shuffledArray[0]).join('')
         renderShuffledWord(shuffledWord)
         
@@ -17326,5 +17331,5 @@ reset.addEventListener('click', (e) => {
 
 
 
-
+module.exports
 },{"./data":2,"./logic":3,"lodash":1}]},{},[4]);

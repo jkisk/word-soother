@@ -6,6 +6,12 @@ const _ = require('lodash')
 
 
 
+const renderScore = () => {
+    let displayScore = localStorage.getItem('score')
+    const scorebox = document.querySelector('.scorebox')
+    scorebox.innerHTML = `<p class="score">Wins: ${displayScore}</p>`
+}
+
 
 
 const wordPick = (array) => {
@@ -20,4 +26,5 @@ const wordPick = (array) => {
 
 
 
-module.exports = {wordPick}
+
+module.exports = {wordPick, renderScore}
