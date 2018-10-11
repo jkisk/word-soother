@@ -17129,10 +17129,20 @@ const creatures = [
     "yak", "zebra"
 ]
 
+const countries = [
+    "afghanistan", "albania", "algeria", "andorra", "angola", "anguilla", "argentina", "armenia", "aruba", "australia", "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bermuda", "bhutan", "bolivia", "bosnia &amp; herzegovina", "botswana", "brazil", "british virgin islands", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "cape verde", "cayman islands", "chad", "chile", "china", "colombia", "congo", "cook islands", "costa rica", "cote d ivoire", "croatia", "cruise ship", "cuba", "cyprus", "czech republic", "denmark", "djibouti", "dominica", "dominican republic", "ecuador", "egypt", "el salvador", "equatorial guinea", "estonia", "ethiopia", "falkland islands", "faroe islands", "fiji", "finland", "france", "french polynesia", "french west indies", "gabon", "gambia", "georgia", "germany", "ghana", "gibraltar", "greece", "greenland", "grenada", "guam", "guatemala", "guernsey", "guinea", "guinea bissau", "guyana", "haiti", "honduras", "hong kong", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "ireland", "isle of man", "israel", "italy", "jamaica", "japan", "jersey", "jordan", "kazakhstan", "kenya",
+    "kuwait", "laos", "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "macau", "macedonia", "madagascar", "malawi", "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia", "montenegro", "montserrat", "morocco", "mozambique", "namibia", "nepal", "netherlands", "netherlands antilles", "new caledonia", "new zealand", "nicaragua", "niger", "nigeria", "norway", "oman", "pakistan", "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "portugal", "puerto rico", "qatar", "reunion", "romania", "russia", "rwanda", "saint pierre &amp; miquelon", "samoa", "san marino", "satellite", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone", "singapore", "slovakia", "slovenia", "south africa", "south korea", "spain", "sri lanka", "st kitts &amp; nevis", "st lucia", "st vincent", "st. lucia", "sudan", "suriname", "swaziland", "sweden", "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand", "timor l'este", "togo", "tonga", "trinidad &amp; tobago", "tunisia", "turkey", "turkmenistan", "turks &amp; caicos", "uganda", "ukraine", "united arab emirates", "united kingdom", "uruguay", "uzbekistan", "venezuela",
+    "Vietnam","yemen","zambia","zimbabwe"
+]
+
+const colors = [
+    'red', 'yellow', 'orange', 'green', 'blue', 'purple', 'indigo', 'violet', 'magenta', 'teal', 'brown', 'black', 'beige', 'maroon', 'cyan', 'aqua', 'pink', 'turquoise', 
+    'gray', 'amber', 'rose', 'cerulean'
+]
 
 
 
-module.exports = {spices, creatures}
+module.exports = {spices, creatures, countries, colors}
 },{}],3:[function(require,module,exports){
 
 const _ = require('lodash')
@@ -17162,15 +17172,34 @@ const { spices, creatures } = require('./data')
 const logic = require('./logic')
 const _ = require('lodash')
 
+// const themeChooser = document.getElementById('theme')
+
+// themeChooser.addEventListener('change', (e) => {
+//     console.log(e.target.value)
+//     if (e.target.value === 'spices') {
+
+//         shuffledArray = logic.wordPick(spices)
+
+//     }
+//     if (e.target.value === 'creatures') {
+
+//         shuffledArray = logic.wordPick(creatures)
+        
+//     } else {
+//         shuffledArray = logic.wordPick(spices)
+//     }
+    
+// })
 
 
-
+let shuffledArray = logic.wordPick(spices)
 const form = document.querySelector('form')
 
-const shuffledArray = logic.wordPick(spices)
 let shuffledWord = _.shuffle(shuffledArray[0]).join('')
 let heldLetterId
-let targetLetterId
+// let targetLetterId
+
+
 
 
 
@@ -17181,12 +17210,13 @@ document.getElementById("answer").focus();
 
 
 const renderShuffledWord = (word) => {
+
     const playArea = document.querySelector('#playArea')
     playArea.innerHTML = ''
     for (let i = 0; i < word.length; i++) {
         let gameBoard = `<div class="letterbox" data-id ="${i}" data-letter="${word[i]}" draggable = "true">${word[i]}</div>`
         playArea.innerHTML += gameBoard
-        
+
     }
     addDropEvents()
 }
@@ -17194,7 +17224,7 @@ const renderShuffledWord = (word) => {
 const renderScore = () => {
     let displayScore = localStorage.getItem('score')
     const scorebox = document.querySelector('.scorebox')
-    scorebox.innerHTML = `<p class="score">Score: ${displayScore}</p>`
+    scorebox.innerHTML = `<p class="score">Wins: ${displayScore}</p>`
 }
 
 renderScore()
@@ -17210,7 +17240,7 @@ const addDropEvents = () => {
         })
         letterbox.addEventListener('drop', (e) => {
             const targetLetterId = e.target.getAttribute('data-id')
-            
+
             console.log('targetletter', targetLetterId)
             const droppingLetter = shuffledWord[heldLetterId]
             console.log(heldLetterId)
@@ -17268,26 +17298,12 @@ form.addEventListener('submit', (e) => {
 
 })
 
-// const theme = document.querySelectorAll('.theme')
-// theme.addEventListener('change', (e) {
-//     if (e.target.value === 'spices') {
 
-//         shuffledArray = logic.wordPick(spices)
-//         window.location.reload()
-//     }
-//     if (e.target.value === 'creatures') {
-
-//         shuffledArray = logic.wordPick(creatures)
-//         window.location.reload()
-//     }else {
-//         shuffledArray = logic.wordPick(spices)
-//     }
-// })
 
 const reset = document.querySelector('.reset')
 reset.addEventListener('click', (e) => {
     let feedback = document.querySelector('.feedback')
-    feedback.innerHTML = `<p class='message'>${shuffled[0]}</p>`
+    feedback.innerHTML = `<p class='message'>${shuffledArray[0]}</p>`
     const newWord = () => {
         window.location.reload()
     }

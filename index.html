@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Word Soother</title>
+    <title>Word Unscramble</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -21,7 +21,7 @@
 <body>
     <main class="container">
             <div class="headline">
-                    <p>Word Soother</p>
+                    <p>Word Unscramble</p>
                     <div class="scorebox">
                     </div>
                     
@@ -41,15 +41,18 @@
                     <input type="text" class="answer-input" autocomplete="off" placeholder="guess here" id="answer"/>
                     <input type="submit"/>
                     <button type="button" class="reset">New Word</button>
-                    <select class="theme">
-                        <option value="spices">Spices</option>
-                        <option value="creatures">Creatures</option>
-                        <option value="choice-3">choice 3</option>
-                        <option value="choice-4">choice 4</option>
-                      </select>
+                    
                 </form>
-            
                 
+                
+            </div>
+            <div class="chooser">
+                <select id="theme">
+                    <option value="spices">Spices</option>
+                    <option value="creatures">Creatures</option>
+                    <option value="countries">Countries</option>
+                    <option value="colors">Colors</option>
+                </select>
             </div>
     </main>
     

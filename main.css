@@ -5,7 +5,7 @@ body {
 .container {
     display: flex;
     font-family: 'Marmelad', sans-serif;
-    background-color: teal;
+    background-color: #493548;
     height: 80vh;
     align-content: center; 
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
     display: flex;
     font-size: 60px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    color: silver;
+    color: #80B192;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 40px;
@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: rosybrown;
+    background-color: #6A8D92;
     margin: 0 auto;
    
     
@@ -74,7 +74,7 @@ body {
     
     
     height: 20vh;
-    color: rosybrown;
+    color: #80B192;
    
     
 }
@@ -86,7 +86,7 @@ body {
     flex-direction: row;
     height: 20vh;
     transition-duration: 1s;
-    color: rosybrown;
+    color: #80B192;
     justify-content: center;
     padding-top: 20px;
 }
@@ -95,7 +95,12 @@ p  {
     font-size: 50px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     
-    /* margin: 0 auto; */
+  
+}
+
+chooser {
+    justify-content: flex-start;
+    
 }
 
 
