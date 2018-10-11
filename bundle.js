@@ -17115,23 +17115,23 @@ const spices = ['anise', 'fennel', 'thyme', 'marjoram', 'rosemary', 'saffron', '
 'mace', 'marjoram', 'nutmeg', 'oregano', 'tarragon', 'turmeric', 'allspice']
 
 const creatures = [
-    "aardvark", "albatross", "alligator", "alpaca", "ant","anteater","antelope","ape","armadillo","donkey","baboon","badger","barracuda","bat","bear","beaver",
-    "bee","bison","boar","buffalo","butterfly","camel","capybara","caribou","cat","caterpillar","cattle","cheetah","chicken","chimpanzee","chinchilla","clam",
-    "cobra","cockroach","coyote","crab","crane","crocodile","crow","deer","dinosaur","dog","dolphin","dove","dragonfly","duck","eagle","eel","elephant","elk",
-    "emu","falcon","ferret","finch","fish","flamingo","fly","fox","frog","gazelle","gerbil","giraffe","gnat","goat","goldfinch","goldfish","goose","gorilla",
+    "aardvark", "albatross", "alligator", "alpaca", "anteater","antelope","armadillo","donkey","baboon","badger","barracuda","bear","beaver",
+    "bison","boar","buffalo","butterfly","camel","capybara","caribou","cat","caterpillar","cattle","cheetah","chicken","chimpanzee","chinchilla","clam",
+    "cobra","cockroach","coyote","crab","crane","crocodile","crow","deer","dinosaur","dolphin","dove","dragonfly","duck","eagle","elephant",
+    "falcon","ferret","finch","fish","flamingo","frog","gazelle","gerbil","giraffe","gnat","goat","goldfinch","goldfish","goose","gorilla",
     "grasshopper","grouse","gull","hamster", "hare","hawk","hedgehog", "heron","herring","hippopotamus","hornet","horse","human","hummingbird","hyena","ibex",
     "jackal","jaguar","jellyfish","kangaroo","kingfisher","koala","lark", "lemur","leopard","lion","llama","lobster","locust","loris","louse","lyrebird","magpie",
     "mallard","manatee","mandrill","mantis", "marten", "meerkat","mink","mole", "mongoose", "monkey","moose","mosquito","mouse","mule","narwhal","newt","nightingale",
-    "octopus","opossum","oryx", "ostrich", "otter","owl","oyster", "panther", "parrot", "partridge","pelican","penguin","pheasant","pig", "pigeon", "pony","porcupine", 
-    "porpoise","quail","rabbit","raccoon","ram","raven","red panda", "reindeer","rhinoceros", "salamander","salmon", "sand dollar", "sandpiper","sardine", "scorpion",
+    "octopus","opossum","oryx", "ostrich", "otter","oyster", "panther", "parrot", "partridge","pelican","penguin","pheasant", "pigeon", "pony","porcupine", 
+    "porpoise","quail","rabbit","raccoon","raven","red panda", "reindeer","rhinoceros", "salamander","salmon", "sand dollar", "sandpiper","sardine", "scorpion",
     "seahorse","seal","shark","sheep","shrew","skunk","snail","snake","sparrow","spider","spoonbill","squid","squirrel","starling","stingray","stinkbug","stork","swallow","swan",
     "termite","tiger","toad", "trout","turkey","turtle","viper","vulture","wallaby","walrus","wasp","weasel","whale","wildcat","wolf","wolverine","wombat","woodpecker","worm","wren",
-    "yak", "zebra"
+    "zebra"
 ]
 
 const countries = [
-    "afghanistan", "albania", "algeria", "andorra", "angola", "anguilla", "argentina", "armenia", "aruba", "australia", "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bermuda", "bhutan", "bolivia", "bosnia &amp; herzegovina", "botswana", "brazil", "british virgin islands", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "cape verde", "cayman islands", "chad", "chile", "china", "colombia", "congo", "cook islands", "costa rica", "cote d ivoire", "croatia", "cruise ship", "cuba", "cyprus", "czech republic", "denmark", "djibouti", "dominica", "dominican republic", "ecuador", "egypt", "el salvador", "equatorial guinea", "estonia", "ethiopia", "falkland islands", "faroe islands", "fiji", "finland", "france", "french polynesia", "french west indies", "gabon", "gambia", "georgia", "germany", "ghana", "gibraltar", "greece", "greenland", "grenada", "guam", "guatemala", "guernsey", "guinea", "guinea bissau", "guyana", "haiti", "honduras", "hong kong", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "ireland", "isle of man", "israel", "italy", "jamaica", "japan", "jersey", "jordan", "kazakhstan", "kenya",
-    "kuwait", "laos", "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "macau", "macedonia", "madagascar", "malawi", "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia", "montenegro", "montserrat", "morocco", "mozambique", "namibia", "nepal", "netherlands", "netherlands antilles", "new caledonia", "new zealand", "nicaragua", "niger", "nigeria", "norway", "oman", "pakistan", "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "portugal", "puerto rico", "qatar", "reunion", "romania", "russia", "rwanda", "saint pierre &amp; miquelon", "samoa", "san marino", "satellite", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone", "singapore", "slovakia", "slovenia", "south africa", "south korea", "spain", "sri lanka", "st kitts &amp; nevis", "st lucia", "st vincent", "st. lucia", "sudan", "suriname", "swaziland", "sweden", "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand", "timor l'este", "togo", "tonga", "trinidad &amp; tobago", "tunisia", "turkey", "turkmenistan", "turks &amp; caicos", "uganda", "ukraine", "united arab emirates", "united kingdom", "uruguay", "uzbekistan", "venezuela",
+    "afghanistan", "albania", "algeria", "andorra", "angola", "anguilla", "argentina", "armenia", "aruba", "australia", "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bermuda", "bhutan", "bolivia", "bosnia &amp; herzegovina", "botswana", "brazil", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "cape verde", "cayman islands", "chad", "chile", "china", "colombia", "congo", "cook islands", "costa rica", "cote d ivoire", "croatia", "cruise ship", "cuba", "cyprus", "czech republic", "denmark", "djibouti", "dominica", "dominican republic", "ecuador", "egypt", "el salvador", "equatorial guinea", "estonia", "ethiopia", "falkland islands", "faroe islands", "fiji", "finland", "france", "french polynesia", "french west indies", "gabon", "gambia", "georgia", "germany", "ghana", "gibraltar", "greece", "greenland", "grenada", "guam", "guatemala", "guernsey", "guinea", "guinea bissau", "guyana", "haiti", "honduras", "hong kong", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "ireland", "isle of man", "israel", "italy", "jamaica", "japan", "jersey", "jordan", "kazakhstan", "kenya",
+    "kuwait", "laos", "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "macau", "macedonia", "madagascar", "malawi", "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia", "montenegro", "montserrat", "morocco", "mozambique", "namibia", "nepal", "netherlands","new zealand", "nicaragua", "niger", "nigeria", "norway", "oman", "pakistan", "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "portugal", "puerto rico", "qatar", "reunion", "romania", "russia", "rwanda", "saint pierre &amp; miquelon", "samoa", "san marino", "satellite", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone", "singapore", "slovakia", "slovenia", "south africa", "south korea", "spain", "sri lanka", "st kitts &amp; nevis", "st lucia", "st vincent", "st. lucia", "sudan", "suriname", "swaziland", "sweden", "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand", "timor l'este", "togo", "tonga", "trinidad &amp; tobago", "tunisia", "turkey", "turkmenistan", "turks &amp; caicos", "uganda", "ukraine", "united arab emirates", "united kingdom", "uruguay", "uzbekistan", "venezuela",
     "Vietnam","yemen","zambia","zimbabwe"
 ]
 
@@ -17168,46 +17168,48 @@ const wordPick = (array) => {
 
 module.exports = {wordPick}
 },{"lodash":1}],4:[function(require,module,exports){
-const { spices, creatures } = require('./data')
+const { spices, creatures, countries, colors } = require('./data')
 const logic = require('./logic')
 const _ = require('lodash')
 
-// const themeChooser = document.getElementById('theme')
-
-// themeChooser.addEventListener('change', (e) => {
-//     console.log(e.target.value)
-//     if (e.target.value === 'spices') {
-
-//         shuffledArray = logic.wordPick(spices)
-
-//     }
-//     if (e.target.value === 'creatures') {
-
-//         shuffledArray = logic.wordPick(creatures)
-        
-//     } else {
-//         shuffledArray = logic.wordPick(spices)
-//     }
-    
-// })
 
 
-let shuffledArray = logic.wordPick(spices)
+const themeChooser = document.getElementById('theme')
+let theme = spices
+
+let shuffledArray = logic.wordPick(theme)
 const form = document.querySelector('form')
 
 let shuffledWord = _.shuffle(shuffledArray[0]).join('')
 let heldLetterId
-// let targetLetterId
+
+themeChooser.addEventListener('change', (e) => {
+    console.log(e.target.value)
+    if (e.target.value === 'spices') {
+        theme = logic.wordPick(spices)
+
+    }
+    if (e.target.value === 'creatures') {
+        theme = logic.wordPick(creatures)
+
+    }if (e.target.value === 'countries') {
+        theme = logic.wordPick(countries)
+
+    }
+if (e.target.value === 'colors') {
+        theme = logic.wordPick(colors)
+    }
+        shuffledArray = logic.wordPick(theme)
+        shuffledWord = _.shuffle(shuffledArray[0]).join('')
+        renderShuffledWord(shuffledWord)
+       
+})
 
 
 
 
 
 document.getElementById("answer").focus();
-
-
-
-
 
 const renderShuffledWord = (word) => {
 
@@ -17218,7 +17220,11 @@ const renderShuffledWord = (word) => {
         playArea.innerHTML += gameBoard
 
     }
-    addDropEvents()
+        document.getElementById('answer').value = ''
+        document.querySelector('.feedback').innerHTML = ''
+        document.getElementById("submit").disabled = false
+        document.getElementById("answer").focus()
+        addDropEvents()
 }
 
 const renderScore = () => {
@@ -17240,18 +17246,11 @@ const addDropEvents = () => {
         })
         letterbox.addEventListener('drop', (e) => {
             const targetLetterId = e.target.getAttribute('data-id')
-
-            console.log('targetletter', targetLetterId)
             const droppingLetter = shuffledWord[heldLetterId]
-            console.log(heldLetterId)
-            console.log('dropping letter', droppingLetter)
             const splitShuffledWord = shuffledWord.split('')
-            console.log(splitShuffledWord)
-
+           
             splitShuffledWord.splice(heldLetterId, 1)
             splitShuffledWord.splice(targetLetterId, 0, droppingLetter)
-
-            console.log(splitShuffledWord)
 
             shuffledWord = splitShuffledWord.join('')
             renderShuffledWord(shuffledWord)
@@ -17270,7 +17269,7 @@ form.addEventListener('submit', (e) => {
 
 
 
-    if (document.getElementById('answer').value === shuffledArray[0]) {
+    if (document.getElementById('answer').value.toLowerCase() === shuffledArray[0]) {
         let score = localStorage.getItem('score')
         if (!score) {
             localStorage.setItem('score', 1)
@@ -17284,13 +17283,19 @@ form.addEventListener('submit', (e) => {
         feedback.innerHTML = `<p class ='message'>Success!!</p>`
 
         renderScore()
+        document.getElementById('answer').value = ''
+        
+
         const replay = () => {
-            window.location.reload()
+            document.querySelector('.feedback').innerHTML = ''
+            shuffledArray = logic.wordPick(theme)
+            shuffledWord = _.shuffle(shuffledArray[0]).join('')
+            renderShuffledWord(shuffledWord)
+            
         }
         setTimeout(replay, 2000)
 
     } else {
-        console.log(shuffledArray[0])
         let feedback = document.querySelector('.feedback')
         feedback.innerHTML = `<p class='message'>Keep Trying</p>`
 
@@ -17302,10 +17307,14 @@ form.addEventListener('submit', (e) => {
 
 const reset = document.querySelector('.reset')
 reset.addEventListener('click', (e) => {
+    document.getElementById("submit").disabled = true
     let feedback = document.querySelector('.feedback')
     feedback.innerHTML = `<p class='message'>${shuffledArray[0]}</p>`
     const newWord = () => {
-        window.location.reload()
+        shuffledArray = logic.wordPick(theme)
+        shuffledWord = _.shuffle(shuffledArray[0]).join('')
+        renderShuffledWord(shuffledWord)
+        
     }
     setTimeout(newWord, 2000)
 
