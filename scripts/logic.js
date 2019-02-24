@@ -4,8 +4,6 @@ const _ = require('lodash')
 
 
 
-
-
 const renderScore = () => {
     let displayScore = localStorage.getItem('score') || 0
     const scorebox = document.querySelector('.scorebox')
@@ -18,12 +16,6 @@ const wordPick = (array) => {
     shuffled = _.shuffle(array)
     return shuffled
 }
-
-
-
-
-
-
 
 
 

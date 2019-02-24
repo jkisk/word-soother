@@ -1,7 +1,6 @@
 const { spices, creatures, countries, colors } = require('./data')
-const {wordPick, renderScore} = require('./logic')
+const { wordPick, renderScore } = require('./logic')
 const _ = require('lodash')
-
 
 
 const themeChooser = document.getElementById('theme')
@@ -24,22 +23,18 @@ themeChooser.addEventListener('change', (e) => {
     if (e.target.value === 'creatures') {
         theme = wordPick(creatures)
 
-    }if (e.target.value === 'countries') {
+    } if (e.target.value === 'countries') {
         theme = wordPick(countries)
 
     }
-if (e.target.value === 'colors') {
+    if (e.target.value === 'colors') {
         theme = wordPick(colors)
     }
-        shuffledArray = wordPick(theme)
-        shuffledWord = _.shuffle(shuffledArray[0]).join('')
-        renderShuffledWord(shuffledWord)
-       
+    shuffledArray = wordPick(theme)
+    shuffledWord = _.shuffle(shuffledArray[0]).join('')
+    renderShuffledWord(shuffledWord)
+
 })
-
-
-
-
 
 
 const renderShuffledWord = (word) => {
@@ -51,13 +46,12 @@ const renderShuffledWord = (word) => {
         playArea.innerHTML += gameBoard
 
     }
-        document.getElementById('answer').value = ''
-        document.querySelector('.feedback').innerHTML = ''
-        document.getElementById("submit").disabled = false
-        document.getElementById("answer").focus()
-        addDropEvents()
+    document.getElementById('answer').value = ''
+    document.querySelector('.feedback').innerHTML = ''
+    document.getElementById("submit").disabled = false
+    document.getElementById("answer").focus()
+    addDropEvents()
 }
-
 
 
 renderScore()
@@ -75,7 +69,7 @@ const addDropEvents = () => {
             const targetLetterId = e.target.getAttribute('data-id')
             const droppingLetter = shuffledWord[heldLetterId]
             const splitShuffledWord = shuffledWord.split('')
-           
+
             splitShuffledWord.splice(heldLetterId, 1)
             splitShuffledWord.splice(targetLetterId, 0, droppingLetter)
 
@@ -94,8 +88,6 @@ renderShuffledWord(shuffledWord)
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-
-
     if (document.getElementById('answer').value.toLowerCase() === shuffledArray[0]) {
         let score = localStorage.getItem('score')
         if (!score) {
@@ -111,14 +103,14 @@ form.addEventListener('submit', (e) => {
 
         renderScore()
         document.getElementById('answer').value = ''
-        
+
 
         const replay = () => {
             document.querySelector('.feedback').innerHTML = ''
             shuffledArray = wordPick(theme)
             shuffledWord = _.shuffle(shuffledArray[0]).join('')
             renderShuffledWord(shuffledWord)
-            
+
         }
         setTimeout(replay, 2000)
 
@@ -132,7 +124,6 @@ form.addEventListener('submit', (e) => {
 })
 
 
-
 const reset = document.querySelector('.reset')
 reset.addEventListener('click', (e) => {
     document.getElementById("submit").disabled = true
@@ -142,16 +133,10 @@ reset.addEventListener('click', (e) => {
         shuffledArray = wordPick(theme)
         shuffledWord = _.shuffle(shuffledArray[0]).join('')
         renderShuffledWord(shuffledWord)
-        
+
     }
     setTimeout(newWord, 2000)
 
 })
 
 
-
-
-
-
-
-module.exports

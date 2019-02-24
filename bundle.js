@@ -17130,9 +17130,9 @@ const creatures = [
 ]
 
 const countries = [
-    "afghanistan", "albania", "algeria", "andorra", "angola", "anguilla", "argentina", "armenia", "aruba", "australia", "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bermuda", "bhutan", "bolivia", "bosnia &amp; herzegovina", "botswana", "brazil", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "cape verde", "cayman islands", "chad", "chile", "china", "colombia", "congo", "cook islands", "costa rica", "cote d ivoire", "croatia", "cruise ship", "cuba", "cyprus", "czech republic", "denmark", "djibouti", "dominica", "dominican republic", "ecuador", "egypt", "el salvador", "equatorial guinea", "estonia", "ethiopia", "falkland islands", "faroe islands", "fiji", "finland", "france", "french polynesia", "french west indies", "gabon", "gambia", "georgia", "germany", "ghana", "gibraltar", "greece", "greenland", "grenada", "guam", "guatemala", "guernsey", "guinea", "guinea bissau", "guyana", "haiti", "honduras", "hong kong", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "ireland", "isle of man", "israel", "italy", "jamaica", "japan", "jersey", "jordan", "kazakhstan", "kenya",
-    "kuwait", "laos", "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "macau", "macedonia", "madagascar", "malawi", "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia", "montenegro", "montserrat", "morocco", "mozambique", "namibia", "nepal", "netherlands","new zealand", "nicaragua", "niger", "nigeria", "norway", "oman", "pakistan", "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "portugal", "puerto rico", "qatar", "reunion", "romania", "russia", "rwanda", "saint pierre &amp; miquelon", "samoa", "san marino", "satellite", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone", "singapore", "slovakia", "slovenia", "south africa", "south korea", "spain", "sri lanka", "st kitts &amp; nevis", "st lucia", "st vincent", "st. lucia", "sudan", "suriname", "swaziland", "sweden", "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand", "timor l'este", "togo", "tonga", "trinidad &amp; tobago", "tunisia", "turkey", "turkmenistan", "turks &amp; caicos", "uganda", "ukraine", "united arab emirates", "united kingdom", "uruguay", "uzbekistan", "venezuela",
-    "Vietnam","yemen","zambia","zimbabwe"
+    "afghanistan", "albania", "algeria", "andorra", "angola", "anguilla", "argentina", "armenia", "aruba", "australia", "austria", "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bermuda", "bhutan", "bolivia", "bosnia &amp; herzegovina", "botswana", "brazil", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "cape verde", "cayman islands", "chad", "chile", "china", "colombia", "congo", "cook islands", "costa rica", "cote d ivoire", "croatia", "cuba", "cyprus", "czech republic", "denmark", "djibouti", "dominica", "dominican republic", "ecuador", "egypt", "el salvador", "equatorial guinea", "estonia", "ethiopia", "falkland islands", "faroe islands", "fiji", "finland", "france", "french polynesia", "french west indies", "gabon", "gambia", "georgia", "germany", "ghana", "gibraltar", "greece", "greenland", "grenada", "guam", "guatemala", "guernsey", "guinea", "guinea bissau", "guyana", "haiti", "honduras", "hong kong", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "ireland", "isle of man", "israel", "italy", "jamaica", "japan", "jersey", "jordan", "kazakhstan", "kenya",
+    "kuwait", "laos", "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "macau", "macedonia", "madagascar", "malawi", "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia", "montenegro", "montserrat", "morocco", "mozambique", "namibia", "nepal", "netherlands","new zealand", "nicaragua", "niger", "nigeria", "norway", "oman", "pakistan", "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "portugal", "puerto rico", "qatar", "reunion", "romania", "russia", "rwanda", "saint pierre &amp; miquelon", "samoa", "san marino", "satellite", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone", "singapore", "slovakia", "slovenia", "south africa", "south korea", "spain", "sri lanka", "st lucia", "st vincent", "st. lucia", "sudan", "suriname", "swaziland", "sweden", "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand", "timor l'este", "togo", "tonga", "tunisia", "turkey", "turkmenistan", "uganda", "ukraine", "united arab emirates", "united kingdom", "uruguay", "uzbekistan", "venezuela",
+    "vietnam","yemen","zambia","zimbabwe"
 ]
 
 const colors = [
@@ -17146,8 +17146,6 @@ module.exports = {spices, creatures, countries, colors}
 },{}],3:[function(require,module,exports){
 
 const _ = require('lodash')
-
-
 
 
 
@@ -17167,18 +17165,11 @@ const wordPick = (array) => {
 
 
 
-
-
-
-
-
-
 module.exports = {wordPick, renderScore}
 },{"lodash":1}],4:[function(require,module,exports){
 const { spices, creatures, countries, colors } = require('./data')
-const {wordPick, renderScore} = require('./logic')
+const { wordPick, renderScore } = require('./logic')
 const _ = require('lodash')
-
 
 
 const themeChooser = document.getElementById('theme')
@@ -17201,22 +17192,18 @@ themeChooser.addEventListener('change', (e) => {
     if (e.target.value === 'creatures') {
         theme = wordPick(creatures)
 
-    }if (e.target.value === 'countries') {
+    } if (e.target.value === 'countries') {
         theme = wordPick(countries)
 
     }
-if (e.target.value === 'colors') {
+    if (e.target.value === 'colors') {
         theme = wordPick(colors)
     }
-        shuffledArray = wordPick(theme)
-        shuffledWord = _.shuffle(shuffledArray[0]).join('')
-        renderShuffledWord(shuffledWord)
-       
+    shuffledArray = wordPick(theme)
+    shuffledWord = _.shuffle(shuffledArray[0]).join('')
+    renderShuffledWord(shuffledWord)
+
 })
-
-
-
-
 
 
 const renderShuffledWord = (word) => {
@@ -17228,13 +17215,12 @@ const renderShuffledWord = (word) => {
         playArea.innerHTML += gameBoard
 
     }
-        document.getElementById('answer').value = ''
-        document.querySelector('.feedback').innerHTML = ''
-        document.getElementById("submit").disabled = false
-        document.getElementById("answer").focus()
-        addDropEvents()
+    document.getElementById('answer').value = ''
+    document.querySelector('.feedback').innerHTML = ''
+    document.getElementById("submit").disabled = false
+    document.getElementById("answer").focus()
+    addDropEvents()
 }
-
 
 
 renderScore()
@@ -17252,7 +17238,7 @@ const addDropEvents = () => {
             const targetLetterId = e.target.getAttribute('data-id')
             const droppingLetter = shuffledWord[heldLetterId]
             const splitShuffledWord = shuffledWord.split('')
-           
+
             splitShuffledWord.splice(heldLetterId, 1)
             splitShuffledWord.splice(targetLetterId, 0, droppingLetter)
 
@@ -17271,8 +17257,6 @@ renderShuffledWord(shuffledWord)
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-
-
     if (document.getElementById('answer').value.toLowerCase() === shuffledArray[0]) {
         let score = localStorage.getItem('score')
         if (!score) {
@@ -17288,14 +17272,14 @@ form.addEventListener('submit', (e) => {
 
         renderScore()
         document.getElementById('answer').value = ''
-        
+
 
         const replay = () => {
             document.querySelector('.feedback').innerHTML = ''
             shuffledArray = wordPick(theme)
             shuffledWord = _.shuffle(shuffledArray[0]).join('')
             renderShuffledWord(shuffledWord)
-            
+
         }
         setTimeout(replay, 2000)
 
@@ -17309,7 +17293,6 @@ form.addEventListener('submit', (e) => {
 })
 
 
-
 const reset = document.querySelector('.reset')
 reset.addEventListener('click', (e) => {
     document.getElementById("submit").disabled = true
@@ -17319,7 +17302,7 @@ reset.addEventListener('click', (e) => {
         shuffledArray = wordPick(theme)
         shuffledWord = _.shuffle(shuffledArray[0]).join('')
         renderShuffledWord(shuffledWord)
-        
+
     }
     setTimeout(newWord, 2000)
 
@@ -17327,9 +17310,4 @@ reset.addEventListener('click', (e) => {
 
 
 
-
-
-
-
-module.exports
 },{"./data":2,"./logic":3,"lodash":1}]},{},[4]);
